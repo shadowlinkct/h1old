@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    include_once 'header.php';
+    require_once 'header.php';
     ?>
     <link rel="stylesheet" href="../css/index.css" />
     <script src="../javascript/sportMusic.js" defer="true"></script>
@@ -13,7 +13,7 @@
 
 <body>
     <?php
-    include_once 'navbar.php';
+    require_once 'navbar.php';
     ?>
     <div class="spotydivprincipale">
         <h1 class="spotydiv">Training Music</h1>
@@ -32,7 +32,7 @@
     </div>
 
     <?php
-    include_once 'footer.php';
+    require_once 'footer.php';
     ?>
 
 </body>

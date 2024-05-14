@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    include_once 'header.php';
+    require_once 'header.php';
     ?>
     <link rel="stylesheet" href="../css/index.css" />
     <script src="../javascript/exerciseApi.js" defer="true"></script>
@@ -13,20 +13,24 @@
 
 <body>
     <?php
-    include_once 'navbar.php';
+    require_once 'navbar.php';
     ?>
     <form name='search_content' id='search_content'>
 
-        <h1 id="h1API">Ricerca esercizi di Bodybuilding da API con Key Authentication</h1>
+<h1 id="h1API">Ricerca esercizi di Bodybuilding da API con Key Authentication</h1>
 
-        <label>Contenuto: <input type='text' name='content' id='content'></label>
+<label>Contenuto: <input type='text' name='content' id='content'></label>
 
-        <label>&nbsp;<input class="submit" type='submit'></label>
+<label>&nbsp;<input class="submit" type='submit'></label>
 
-    </form>
+</form>
+
+<article id="exercise-view">
+
+</article>
 
     <?php
-    include_once 'footer.php';
+    require_once 'footer.php';
     ?>
 
 </body>

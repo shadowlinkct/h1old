@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    include_once 'header.php';
+    require_once 'header.php';
     ?>
     <link rel="stylesheet" href="../css/index.css" />
     <script src="../javascript/index.js" defer></script>
@@ -12,7 +12,7 @@
 
 <body>
     <?php
-    include_once 'navbar.php';
+    require_once 'navbar.php';
     ?>
     </header>
     <article>
@@ -403,7 +403,7 @@
         <br>
     </article>
     <?php
-    include_once 'footer.php';
+    require_once 'footer.php';
     ?>
 </body>
 

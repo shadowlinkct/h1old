@@ -79,7 +79,7 @@ async function fetchAllExerciseBaseData() {
 }
 
 function processExerciseData(data) {
-	const resultsDiv = document.querySelector('#album-view');
+	const resultsDiv = document.querySelector('#exercise-view');
 
 	for (let i = 0; i < data.length; i++) {
 		let exercise = data[i];
