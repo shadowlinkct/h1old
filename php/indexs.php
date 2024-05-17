@@ -6,6 +6,7 @@
     require_once 'header.php';
     ?>
     <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/persistent.css">
     <script src="../javascript/index.js" defer></script>
     <title>hw1</title>
 </head>

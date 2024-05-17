@@ -5,7 +5,7 @@
     <?php
     require_once 'header.php';
     ?>
-    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/persistent.css">
     <script src="../javascript/sportMusic.js" defer="true"></script>
     <link rel="stylesheet" href="../css/sportMusic.css" />
     <title>hw1</title>

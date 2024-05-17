@@ -5,7 +5,7 @@
     <?php
     require_once 'header.php';
     ?>
-    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/persistent.css">
     <script src="../javascript/exerciseApi.js" defer="true"></script>
     <link rel="stylesheet" href="../css/exerciseApi.css" />
     <title>hw1</title>
