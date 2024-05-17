@@ -11,7 +11,7 @@
 
             <div class="group2">
                 <a>€0,00 0 prodotti</a>
-                <a>Accedi</a>
+                <a href="login.php">Accedi</a>
             </div>
         </div>
     </div>

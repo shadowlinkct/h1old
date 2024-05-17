@@ -1,47 +1,37 @@
 <?php
 ob_start();
 session_start();
-include_once "dbconnection.php";
+require_once "dbconnection.php";
 $error = "";
 if (array_key_exists("submit", $_POST)) {
 
     if (!$_POST['email']) {
-
         $error .= "Il campo email è obbligatorio<br>";
     }
-    if (!$_POST['passwordutente']) {
-
+    if (!$_POST['password']) {
         $error .= "Il campo password è obbligatorio<br>";
     }
     if ($error != "") {
-
         $error = "<p>Ci sono stati degli errori</p>" . $error;
     } else {
-        /* if ($_POST['Registrati'] == '1') { */
-        $query = "SELECT * FROM `account` WHERE email = '" . mysqli_real_escape_string($link, $_POST['email']) . "'";
-        $result = mysqli_query($link, $query);
+        $query = "SELECT * FROM `account` WHERE email = '" . mysqli_real_escape_string($conn, $_POST['email']) . "'";
+        $result = mysqli_query($conn, $query);
         if ($row = mysqli_fetch_assoc($result)) {
             $error = "l'email inserita è già stata presa";
-        } else if ($_POST['passwordutente'] != $_POST['confermapassword']) {
+        } else if ($_POST['password'] != $_POST['conferma-password']) {
             $error = "Le password non corrispondono, Riprova!";
         } else {
-            $password = $_POST['passwordutente'];
+            $password = $_POST['password'];
             $hashed = password_hash($password, PASSWORD_BCRYPT);
-            $query = "INSERT INTO `account`(`nome`, `cognome`, `genere`, `data_n`, `email`, `password`, `tel_c`) VALUES ('" . $_POST['nome'] . "','" . $_POST['cognome'] . "','" . $_POST['genere'] . "','" . $_POST['data_n'] . "','" . $_POST['email'] . "','" . $hashed . "','" . $_POST['tel_c'] . "')";
-            if (!mysqli_query($link, $query)) {
-
+            $query = "INSERT INTO `account`(`nome`, `cognome`, `genere`, `data_n`, `email`, `password`, `tel_c`) VALUES ('" . $_POST['nome'] . "','" . $_POST['cognome'] . "','" . $_POST['genere'] . "','" . $_POST['data-di-nascita'] . "','" . $_POST['email'] . "','" . $hashed . "','" . $_POST['telefono'] . "')";
+            if (!mysqli_query($conn, $query)) {
                 $error = "<p>Ci sono stati degli errori del server. Riprovare più tardi.</p>";
             } else {
-                $id = mysqli_insert_id($link);
-
+                $id = mysqli_insert_id($conn);
                 $_SESSION['id'] =  $id;
                 setcookie("id", $_SESSION['id'], time() + 3600);
-                /*  if (isset($_POST['home_utente']) && $_POST['home_utente'] == '1') {
-
-                        setcookie("id", $id, time() + 3600);
-                    } */
                 echo "Accesso avvenuto!!";
-                header("Location: home_utente.php");
+                header("Location: indexs.php");
             }
         }
     }
@@ -70,8 +60,12 @@ ob_end_flush();
     <?php
     require_once 'navbar.php';
     ?>
+    <div class="acchead">
+        <h1>Il mio account</h1>
+
+    </div>
     <div class="container">
-        <form class="registration-form">
+        <form class="registration-form" method="post" action="">
             <h1>REGISTRAZIONE</h1>
             <div class="form-row">
                 <div class="form-group">
@@ -117,8 +111,9 @@ ob_end_flush();
                     <input type="password" id="conferma-password" name="conferma-password" required>
                 </div>
             </div>
-            <button type="submit">Registrati</button>
-            <p>Sei già registrato? <a href="#">Accedi</a></p>
+            <button type="submit" name="submit">Registrati</button>
+            <p>Sei già registrato? <a href="login.php">Accedi</a></p>
+            <p>I tuoi dati personali verranno utilizzati per supportare la tua esperienza su questo sito Web, per gestire l'accesso al tuo account e per altri scopi descritti nella nostra <a>privacy policy.</a></p>
         </form>
     </div>
     <?php
