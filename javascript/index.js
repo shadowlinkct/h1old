@@ -1,6 +1,6 @@
 // DEFINIZIONE DELLE COSTANTI PER LE IMMAGINI
-const BOOKMARKPINNED = 'img/bookmark.png';
-const BOOKMARKNOTPINNED = 'img/bookmarkno.png';
+const BOOKMARKPINNED = '../img/bookmark.png';
+const BOOKMARKNOTPINNED = '../img/bookmarkno.png';
 // DEFINIZIONE DELLE COSTANTI PER LE IMMAGINI FINE
 
 // GESTIONE DELL'ICONA DEI PREFERITI
