@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once "dbconnection.php";
+//echo "". $_SESSION["id"]."<br>"; //DEBUG
+?>
 <!DOCTYPE html>
 <html>
 

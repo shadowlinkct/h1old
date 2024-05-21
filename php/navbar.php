@@ -5,19 +5,35 @@
     <div id="flexlogin">
         <div id="loginelemcontainer">
             <div class="group">
-                <a>About InVictus</a>
-                <a>Gruppo Facebook</a>
+                <a>About InVictus</a><img id='downarrowiconsmall' src="../img/down-arrow2.svg" />
+                <div class='iconContainer'><img class='myImgClass' src='../img/userGroupIcon.svg'/><a>Gruppo Facebook</a></div>
             </div>
 
             <div class="group2">
                 <a>€0,00 0 prodotti</a>
-                <a href="login.php">Accedi</a>
+                <?php
+                if (isset($_SESSION['id'])) {
+                    $query = "SELECT `nome` FROM `account` WHERE id = '" . mysqli_real_escape_string($conn, $_SESSION['id']) . "'";
+                
+                    $result = mysqli_query($conn, $query);
+                
+                    if ($result) {
+                        $row = mysqli_fetch_array($result);
+                        echo "<div class='iconContainer'><img class='myImgClass' src='../img/userIcon.svg'/><a href='#'>Ciao $row[nome]!</a></div>";
+                        echo "<a href='logout.php'>Esci</a>";
+                        
+                    }
+                } else {
+                    echo '<a href="login.php">Accedi</a>';
+                }
+                
+                ?>
             </div>
         </div>
     </div>
     <div class="logonav">
         <div id="logodiv">
-            <img src="../img/logo.png" alt="Descrizione dell'immagine">
+            <a href="indexs.php"><img src="../img/logo.png" alt="Descrizione dell'immagine"></a>
         </div>
         <div class="centerlink">
             <div class="centerlink-item" id="blog"><a>BLOG</a><img src="../img/forward-arrow.png" /></div>
