@@ -24,7 +24,7 @@
                         
                     }
                 } else {
-                    echo '<a href="login.php">Accedi</a>';
+                    echo "<div class='iconContainer'><img class='myImgClass' src='../img/userIcon.svg'/><a href='login.php'>Accedi</a></div>";
                 }
                 
                 ?>
