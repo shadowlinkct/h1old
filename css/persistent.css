@@ -434,15 +434,13 @@ div.centerlink a:hover {
     height: 100%;
   }
 
-  /*   .group {
-      margin-left: 0.1vh;
-      width: 16%;
-    } */
+    .group {
+      width: 36vh;
+    } 
 
-  /*   .group2 {
-      margin-right: 3.5vh;
-      width: 12%;
-    } */
+    .group2 {
+      width: 40vh;
+    }
 
   .articlecontainer {
     width: 100%;

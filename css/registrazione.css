@@ -1,9 +1,5 @@
 body {
-    font-family: Roboto Condensed, sans-serif;
     background-color: #f7f7f7;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 .container {
@@ -130,5 +126,8 @@ p a:hover {
 @media (max-width: 600px) {
     .form-row {
         flex-direction: column;
+    }
+    .container, .logincontainer{
+        padding: 0;
     }
 }

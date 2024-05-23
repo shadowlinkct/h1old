@@ -66,7 +66,7 @@ ob_end_flush();
     <?php
     require_once 'header.php';
     ?>
-    <title>Registrazione</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../css/registrazione.css">
     <link rel="stylesheet" href="../css/persistent.css">
 
