@@ -51,6 +51,7 @@ ob_end_flush();
     require_once 'header.php';
     ?>
     <title>Registrazione</title>
+    <script src="../javascript/validazioneDatiReg.js" defer="true"></script>
     <link rel="stylesheet" href="../css/registrazione.css">
     <link rel="stylesheet" href="../css/persistent.css">
 

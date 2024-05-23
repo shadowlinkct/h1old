@@ -44,6 +44,9 @@ div#loginelemcontainer a {
   height: auto;
   width: 25px;
 }
+.iconContainer a{
+text-decoration: none;
+}
 #downarrowiconsmall{
   margin-right: 17px;
   height: auto;
@@ -645,6 +648,7 @@ div.centerlink a:hover {
     display: none;
   }
 
+
   .fixed-button p {
     margin: 0;
   }
@@ -653,15 +657,17 @@ div.centerlink a:hover {
     padding: 7px 7px;
   }
 
-  /*     #logodiv img {
-      height: auto;
-      max-width: 100%;
-      margin-left: 0;
-    } */
-
-  /*  .group {
-      width: 25%;
-    } */
+  .group,
+  .group2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .group{
+    width: 40%;
+  }
+.group2{
+  width: 20%;
+}
 
   .articlecontainercontent {
     display: flex;
@@ -686,16 +692,12 @@ div.centerlink a:hover {
     height: auto;
   }
 
-  /*     .group {
-      margin-left: 0.1vh;
-      width: 25%;
-    }
-  
-    .group2 {
-      margin-right: 3.5vh;
-      width: 12%;
-    } */
-
+  .iconContainer a{
+    display: none;
+  }
+#Esci{
+  display: block;
+}
 
   .academy-container {
     width: 100%;
@@ -778,15 +780,19 @@ div.centerlink a:hover {
     width: 200px;
   }
 
-  #logodiv a {
-    margin-left: 0%;
-  }
-
   .group,
   .group2 {
-    width: 50%;
     margin-left: 0;
     margin-right: 0;
+  }
+  .group{
+    width: 50%;
+  }
+.group2{
+  width: 30%;
+}
+  #logodiv a {
+    margin-left: 0%;
   }
 
   #logodiv {

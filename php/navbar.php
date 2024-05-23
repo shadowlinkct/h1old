@@ -6,11 +6,11 @@
         <div id="loginelemcontainer">
             <div class="group">
                 <a>About InVictus</a><img id='downarrowiconsmall' src="../img/down-arrow2.svg" />
-                <div class='iconContainer'><img class='myImgClass' src='../img/userGroupIcon.svg'/><a>Gruppo Facebook</a></div>
+                <div class='iconContainer'><img class='myImgClass' src='../img/userGroupIcon.svg'/><a  href="https://www.facebook.com/projectinvictus">Gruppo Facebook</a></div>
             </div>
 
             <div class="group2">
-                <a>€0,00 0 prodotti</a>
+            <div class='iconContainer'><img class='myImgClass' src='../img/bagShopping.svg'/><a>€0,00 0 prodotti</a></div>
                 <?php
                 if (isset($_SESSION['id'])) {
                     $query = "SELECT `nome` FROM `account` WHERE id = '" . mysqli_real_escape_string($conn, $_SESSION['id']) . "'";
@@ -19,8 +19,8 @@
                 
                     if ($result) {
                         $row = mysqli_fetch_array($result);
-                        echo "<div class='iconContainer'><img class='myImgClass' src='../img/userIcon.svg'/><a href='#'>Ciao $row[nome]!</a></div>";
-                        echo "<a href='logout.php'>Esci</a>";
+                        echo "<div class='iconContainer'><img class='myImgClass' src='../img/userIcon.svg'/><a href='paginaUtente.php'>Ciao $row[nome]!</a></div>";
+                        echo "<a id='Esci' href='logout.php'>Esci</a>";
                         
                     }
                 } else {
