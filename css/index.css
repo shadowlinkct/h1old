@@ -237,48 +237,74 @@ div.academy-container span {
 
 .multisection {
   padding: 20px;
-  background-color: #f4f4f4;
+  /*background-color: #f4f4f4;*/
+}
+
+.contenitore-articoli {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.largetabitem, .mediumtabitem, .smalltabitem {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .largetabitem {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-basis: calc(100% - 10px); /* Ad esempio, gli articoli large occupano l'intera larghezza */
 }
 
-.largetabcontent {
+.mediumtabitem {
+    flex-basis: calc(50% - 10px); /* Gli articoli medium occupano metà della larghezza */
+}
+
+.smalltabitem {
+    flex-basis: calc(33.33% - 10px); /* Gli articoli small occupano un terzo della larghezza */
+}
+
+.tabcontent {
   display: flex;
   flex-wrap: wrap;
+ 
 }
 
-.imagelargetab img {
+
+.imagetab{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imagetab img {
   max-width: 100%;
   height: auto;
   border-bottom: 1px solid #ddd;
 }
 
-.largetabtext {
+.tabtext {
   padding: 20px;
   flex: 1;
   display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 
-.largetabtext span {
+.tabtext span {
   font-size: 14px;
   color: #888;
 }
 
-.largetabtext h4 {
+.tabtext h4 {
   font-size: 24px;
   margin: 10px 0;
   color: #333;
 }
 
-.largetabtext p {
+.tabtext p {
   font-size: 16px;
   line-height: 1.5;
   color: #555;
@@ -307,37 +333,37 @@ div.academy-container span {
 
 /* Stili responsive */
 @media (max-width: 768px) {
-  .largetabcontent {
+  .tabcontent {
       flex-direction: column;
   }
 
-  .imagelargetab img {
+  .imagetab img {
       border-bottom: none;
   }
 
-  .largetabtext {
+  .tabtext {
       padding: 15px;
   }
 
-  .largetabtext h4 {
+  .tabtext h4 {
       font-size: 20px;
   }
 
-  .largetabtext p {
+  .tabtext p {
       font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
-  .largetabtext {
+  .tabtext {
       padding: 10px;
   }
 
-  .largetabtext h4 {
+  .tabtext h4 {
       font-size: 18px;
   }
 
-  .largetabtext p {
+  .tabtext p {
       font-size: 12px;
   }
 }

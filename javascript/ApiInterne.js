@@ -11,7 +11,7 @@ async function caricaArticoli() {
 }
 
 function mostraArticoli(articoli) {
-    const contenitore = document.getElementById('contenitore-articoli');
+    const contenitore = document.querySelector('.contenitore-articoli');
 
     for (let i = 0; i < articoli.length; i++) {
         creaArticolo(articoli[i], contenitore);
@@ -36,15 +36,25 @@ function mostraArticoli(articoli) {
 
 
 function creaArticolo(articolo, contenitore) {
-    const articoloDiv = document.createElement('div');
-    articoloDiv.classList.add('largetabitem');
+    let articoloDiv; // Declare articoloDiv here
 
+    if(articolo.intestazione == 1){
+        articoloDiv = document.createElement('div');
+        articoloDiv.classList.add('largetabitem');
+    }else if(articolo.intestazione == 2){
+        articoloDiv = document.createElement('div');
+        articoloDiv.classList.add('mediumtabitem');
+    }else{
+        articoloDiv = document.createElement('div');
+        articoloDiv.classList.add('smalltabitem');
+    }
+    
     const articoloContentDiv = document.createElement('div');
-    articoloContentDiv.classList.add('largetabcontent');
+    articoloContentDiv.classList.add('tabcontent');
     articoloDiv.appendChild(articoloContentDiv);
 
     const imageDiv = document.createElement('div');
-    imageDiv.classList.add('imagelargetab');
+    imageDiv.classList.add('imagetab');
     const image = document.createElement('img');
     image.src = articolo.immagine_principale;
     image.alt = 'Immagine';
@@ -52,7 +62,7 @@ function creaArticolo(articolo, contenitore) {
     articoloContentDiv.appendChild(imageDiv);
 
     const articoloTextDiv = document.createElement('div');
-    articoloTextDiv.classList.add('largetabtext');
+    articoloTextDiv.classList.add('tabtext');
     articoloContentDiv.appendChild(articoloTextDiv);
 
     const dataSpan = document.createElement('span');
@@ -84,7 +94,6 @@ function creaArticolo(articolo, contenitore) {
 
     descrizioneP.appendChild(contenitoreSegnalibro);
     articoloTextDiv.appendChild(descrizioneP);
-
     contenitore.appendChild(articoloDiv);
 }
 

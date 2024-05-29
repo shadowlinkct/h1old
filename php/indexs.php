@@ -73,9 +73,10 @@ require_once "dbconnection.php";
     </section>
 
     <section class="multisection">
-    <div class="multisectioncontainer" id="contenitore-articoli">
+    <div class="multisectioncontainer contenitore-articoli">
             <!-- Gli articoli verranno caricati qui dinamicamente -->
         </div>
+        
     </section>
     <article class="slideshow-div">
         <div class="SideshowText">
