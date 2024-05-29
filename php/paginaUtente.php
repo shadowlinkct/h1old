@@ -81,9 +81,12 @@ if (array_key_exists('id', $_SESSION)) {
                     <button type="submit">SALVA LE MODIFICHE</button>
                 </form>
             </div>
-            <!-- Altre sezioni di contenuto vanno qui -->
+            <!-- -->
         </div>
     </div>
+    <?php
+    require_once 'footer.php';
+    ?>
 </body>
 
 </html>
