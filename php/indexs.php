@@ -77,7 +77,6 @@ require_once "dbconnection.php";
             <!-- Gli articoli verranno caricati qui dinamicamente -->
         </div>
     </section>
-    </section>
     <article class="slideshow-div">
         <div class="SideshowText">
             <h1>I NOSTRI LIBRI</h1>

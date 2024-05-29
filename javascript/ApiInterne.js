@@ -13,24 +13,27 @@ async function caricaArticoli() {
 function mostraArticoli(articoli) {
     const contenitore = document.getElementById('contenitore-articoli');
 
-    articoli.forEach(articolo => creaArticolo(articolo, contenitore));
+    for (let i = 0; i < articoli.length; i++) {
+        creaArticolo(articoli[i], contenitore);
+    }
 
     // Controlla i preferiti
     fetch('api.php?preferiti=true')
         .then(response => response.json())
         .then(preferiti => {
-            preferiti.forEach(preferito => {
-                const bookmark = document.getElementById('bookmark' + preferito.id_articolo);
+            for (let i = 0; i < preferiti.length; i++) {
+                const bookmark = document.getElementById('bookmark' + preferiti[i].id_articolo);
                 if (bookmark) {
                     bookmark.src = '../img/bookmark.png';
                 }
-            });
+            }
         })
         .catch(error => console.error('Errore nel caricamento dei preferiti:', error));
 
     // Aggiungi l'evento di clic ai segnalibri
     aggiungiEventiSegnalibro();
 }
+
 
 function creaArticolo(articolo, contenitore) {
     const articoloDiv = document.createElement('div');
@@ -53,15 +56,21 @@ function creaArticolo(articolo, contenitore) {
     articoloContentDiv.appendChild(articoloTextDiv);
 
     const dataSpan = document.createElement('span');
-    dataSpan.innerHTML = `${articolo.data} - <a class="academy-link" href="${articolo.link}">Link</a>`;
+    dataSpan.textContent = articolo.data + ' - ';
     articoloTextDiv.appendChild(dataSpan);
 
+    const link = document.createElement('a');
+    link.textContent = articolo.categoria || 'Link'; // Usa la categoria per il testo del link
+    link.setAttribute('href', articolo.link);
+    link.classList.add('academy-link');
+    dataSpan.appendChild(link);
+
     const titoloH4 = document.createElement('h4');
-    titoloH4.innerText = articolo.titolo;
+    titoloH4.textContent = articolo.titolo;
     articoloTextDiv.appendChild(titoloH4);
 
     const descrizioneP = document.createElement('p');
-    descrizioneP.innerText = articolo.descrizione;
+    descrizioneP.textContent = articolo.descrizione;
 
     const contenitoreSegnalibro = document.createElement('div');
     contenitoreSegnalibro.classList.add('bookmark-container');
@@ -69,7 +78,7 @@ function creaArticolo(articolo, contenitore) {
     const immagineSegnalibro = document.createElement('img');
     immagineSegnalibro.id = 'bookmark' + articolo.id;
     immagineSegnalibro.classList.add('bookmark');
-    immagineSegnalibro.src = '../img/bookmarkno.png';
+    immagineSegnalibro.setAttribute('src', '../img/bookmarkno.png');
     immagineSegnalibro.dataset.articoloId = articolo.id; // Aggiunta dell'ID dell'articolo come dato
     contenitoreSegnalibro.appendChild(immagineSegnalibro);
 
@@ -82,7 +91,7 @@ function creaArticolo(articolo, contenitore) {
 function aggiungiEventiSegnalibro() {
     const segnalibri = document.querySelectorAll('.bookmark');
     segnalibri.forEach(segnalibro => {
-        segnalibro.addEventListener('click', function() {
+        segnalibro.addEventListener('click', function () {
             const src = segnalibro.src;
             const articoloId = segnalibro.dataset.articoloId;
             if (src.includes('bookmarkno.png')) {

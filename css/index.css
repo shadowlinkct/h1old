@@ -233,84 +233,116 @@ div.academy-container span {
 /*---- SECTION DOUBLE CONTENT FINE ----*/
 
 /*---- MULTI NEWS SECTION ----*/
-/* Stile per il contenitore principale */
-.multisectioncontainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 1em;
-  padding: 1em;
-  overflow: auto; /* Gestisce il contenuto in eccesso */
+/* Stili generali */
+
+.multisection {
+  padding: 20px;
+  background-color: #f4f4f4;
 }
 
-/* Stile per il contenitore dell'articolo */
 .largetabitem {
-  display: flex;
-  flex-direction: column;
-  margin: 1em;
-  padding: 1em;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-
-
-.largetabitem:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-/* Stile per il contenuto dell'articolo */
 .largetabcontent {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap; /* Aggiungi questa linea */
+  flex-wrap: wrap;
 }
 
-
-/* Stile per l'immagine dell'articolo */
 .imagelargetab img {
-  max-width: 200px;
+  max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-bottom: 1px solid #ddd;
 }
 
-/* Stile per il testo dell'articolo */
 .largetabtext {
-  flex-grow: 1;
-  margin-left: 1em;
-  font-family: "PT Sans", sans-serif;
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.largetabtext span {
+  font-size: 14px;
+  color: #888;
 }
 
 .largetabtext h4 {
-  margin-top: 0;
+  font-size: 24px;
+  margin: 10px 0;
+  color: #333;
 }
 
 .largetabtext p {
-  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  margin: 10px 0 20px 0;
+  flex-grow: 1;
 }
 
-/* Stile per il segnalibro */
+.academy-link {
+  text-decoration: none;
+}
+
+.academy-link:hover {
+  text-decoration: underline;
+}
+
+.bookmark-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .bookmark {
   width: 24px;
   height: 24px;
   cursor: pointer;
 }
 
-/* Stile per i dispositivi mobili */
-@media (max-width: 600px) {
+/* Stili responsive */
+@media (max-width: 768px) {
   .largetabcontent {
       flex-direction: column;
   }
 
   .imagelargetab img {
-      max-width: 100%;
+      border-bottom: none;
   }
 
   .largetabtext {
-      margin-left: 0;
+      padding: 15px;
   }
+
+  .largetabtext h4 {
+      font-size: 20px;
+  }
+
+  .largetabtext p {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .largetabtext {
+      padding: 10px;
+  }
+
+  .largetabtext h4 {
+      font-size: 18px;
+  }
+
+  .largetabtext p {
+      font-size: 12px;
+  }
+}
+.bookmark:hover {
+  transform: scale(1.1);
 }
 
 .bookmark-container {
