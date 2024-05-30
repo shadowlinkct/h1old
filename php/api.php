@@ -1,6 +1,11 @@
 <?php
 session_start();
 require_once 'dbconnection.php';
+if (!isset($_SESSION["id"])) {
+    header("Content-Type: application/json");
+    echo json_encode(["errore" => "Utente non loggato"]);
+    exit; // Termina l'esecuzione dello script
+}
 header("Content-Type: application/json");
 
 $metodoRichiesta = $_SERVER["REQUEST_METHOD"];

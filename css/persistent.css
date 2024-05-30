@@ -467,49 +467,6 @@ div.centerlink a:hover {
     flex-direction: column;
   }
 
-  .largetabitem {
-    width: 100%
-  }
-
-  .imagelargetab {
-    height: 54%;
-    width: 100%;
-  }
-
-  .imagelargetab img {
-    width: 100%;
-  }
-
-  .imagemediumtab {
-    width: 68%;
-    margin-top: 9.5vh;
-  }
-
-  .imagemediumtab img {
-    width: 100%;
-    height: auto;
-  }
-
-  .mediumtabitem {
-    width: 100%
-  }
-
-  .multismallsectioncontainer {
-    display: flex;
-    width: 77%;
-    flex-direction: column;
-  }
-
-  .imagesmalltab {
-    height: auto;
-    width: 51.5%;
-    margin-left: 1vh;
-  }
-
-  .multismallsectioncontainer {
-    display: flex;
-    width: 100%;
-  }
 
   .academy-content {
     margin: 2px;

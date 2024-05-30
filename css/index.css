@@ -236,80 +236,97 @@ div.academy-container span {
 /* Stili generali */
 
 .multisection {
-  padding: 20px;
-  /*background-color: #f4f4f4;*/
+  margin-top: 10vh;
+  padding: 10px;
 }
 
-.contenitore-articoli {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.multisectioncontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.largetabitem, .mediumtabitem, .smalltabitem {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.largetabitem,
+.mediumtabitem,
+.smalltabitem {
+  box-sizing: border-box;
+  margin: 5px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  font-size: 0.8em; /* Riduzione della dimensione del font */
 }
 
 .largetabitem {
-    flex-basis: calc(100% - 10px); /* Ad esempio, gli articoli large occupano l'intera larghezza */
+  flex: 1 1 calc(50% - 10px); /* Prende il 50% della larghezza della viewport */
 }
 
 .mediumtabitem {
-    flex-basis: calc(50% - 10px); /* Gli articoli medium occupano metà della larghezza */
+  flex: 1 1 calc(25% - 10px); /* Prende il 25% della larghezza della viewport */
 }
 
 .smalltabitem {
-    flex-basis: calc(33.33% - 10px); /* Gli articoli small occupano un terzo della larghezza */
+  flex: 1 1 calc(16.666% - 10px); /* Prende il 16.6% della larghezza della viewport */
 }
 
 .tabcontent {
   display: flex;
-  flex-wrap: wrap;
- 
+  flex-direction: column;
 }
-
-
 .imagetab{
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .imagetab img {
-  max-width: 100%;
+  width: 80%;
   height: auto;
-  border-bottom: 1px solid #ddd;
 }
 
 .tabtext {
-  padding: 20px;
-  flex: 1;
+  padding: 10px;
+  display: flex;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 85%;
+  margin: auto;
 }
 
 .tabtext span {
-  font-size: 14px;
-  color: #888;
+  font-size: 1em;
+  color: #667;
+}
+
+.academy-link {
+  text-decoration: none;
+  font-size: 0.9em; /* Riduzione della dimensione del font */
+}
+
+.academy-link:hover {
+  text-decoration: underline;
 }
 
 .tabtext h4 {
-  font-size: 24px;
-  margin: 10px 0;
+  margin: 5px 0;
+  font-size: 1.7em; /* Riduzione della dimensione del font */
   color: #333;
 }
 
 .tabtext p {
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 1.3em;
   color: #555;
-  margin: 10px 0 20px 0;
-  flex-grow: 1;
+}
+
+.bookmark-container {
+  display: inline-block;
+}
+
+.bookmark {
+  width: 15px; /* Riduzione delle dimensioni */
+  height: 15px; /* Riduzione delle dimensioni */
+  cursor: pointer;
 }
 
 .academy-link {
@@ -330,7 +347,33 @@ div.academy-container span {
   height: 24px;
   cursor: pointer;
 }
+.bookmark:hover {
+  transform: scale(1.1);
+}
 
+.bookmark-container {
+  display: flex;
+  background-color: #c32d3200;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+div.bookmark-container img {
+  width: 20px;
+  height: auto;
+}
+@media (max-width: 1200px) {
+  .mediumtabitem {
+      flex: 1 1 calc(33.333% - 10px); /* Prende il 33.333% della larghezza della viewport */
+  }
+
+  .largetabitem ,.mediumtabitem, .smalltabitem {
+    width: 100%
+  }
+  .smalltabitem {
+      flex: 1 1 calc(50% - 10px); /* Prende il 50% della larghezza della viewport */
+  }
+}
 /* Stili responsive */
 @media (max-width: 768px) {
   .tabcontent {
@@ -352,6 +395,11 @@ div.academy-container span {
   .tabtext p {
       font-size: 14px;
   }
+  .largetabitem,
+  .mediumtabitem,
+  .smalltabitem {
+      flex: 1 1 calc(100% - 10px); /* Prende il 100% della larghezza della viewport */
+  }
 }
 
 @media (max-width: 480px) {
@@ -366,21 +414,6 @@ div.academy-container span {
   .tabtext p {
       font-size: 12px;
   }
-}
-.bookmark:hover {
-  transform: scale(1.1);
-}
-
-.bookmark-container {
-  display: flex;
-  background-color: #c32d3200;
-  justify-content: flex-end;
-  flex-direction: row;
-}
-
-div.bookmark-container img {
-  width: 20px;
-  height: auto;
 }
 
 /*---- MULTI NEWS SECTION FINE ----*/
