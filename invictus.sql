@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 30, 2024 alle 01:00
+-- Creato il: Mag 30, 2024 alle 15:11
 -- Versione del server: 10.4.28-MariaDB
--- Versione PHP: 8.2.4
+-- Versione PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -56,7 +56,7 @@ INSERT INTO `account` (`nome`, `cognome`, `genere`, `data_n`, `email`, `password
 
 CREATE TABLE `articoli` (
   `id` int(11) NOT NULL,
-  `data` date NOT NULL,
+  `data` varchar(255) NOT NULL,
   `titolo` varchar(255) NOT NULL,
   `descrizione` text NOT NULL,
   `link` varchar(255) NOT NULL,
@@ -71,20 +71,20 @@ CREATE TABLE `articoli` (
 --
 
 INSERT INTO `articoli` (`id`, `data`, `titolo`, `descrizione`, `link`, `immagine_principale`, `immagine_segnalibro`, `categoria`, `intestazione`) VALUES
-(1, '2024-03-20', 'Reset metabolico per dimagrire: come si fa? Schema', 'Il reset metabolico è una strategia che permette di dimagrire alzando le calorie e di raggiungere una composizione corporea migliore, specialmente quando la dieta è abbinata ad un allenamento con…', 'https://www.example.com/reset-metabolico', '../img/largetab.png', '../img/bookmarkno.png', 'METABOLISMO', 1),
-(2, '2024-03-19', 'Dieta della frutta per dimagrire', 'La dieta della frutta è una dieta che si basa principalmente sul consumo di frutta fresca e di stagione per favorire il dimagrimento e migliorare la salute.', 'https://www.example.com/dieta-della-frutta', '../img/frutta-verdura-480x270.jpeg', '../img/bookmarkno.png', NULL, 2),
-(3, '2024-03-18', 'Dieta ferrea per dimagrire velocemente', 'La dieta ferrea è un regime alimentare molto rigido che promette una rapida perdita di peso attraverso il consumo di alimenti a basso contenuto calorico.', 'https://www.example.com/dieta-ferrea', '../img/dieta-ferrea-1-640x360.jpg', '../img/bookmarkno.png', NULL, 2),
-(4, '2024-03-17', 'Dieta vegetariana: la guida completa', 'La dieta vegetariana esclude carne e pesce, ma include una vasta gamma di alimenti a base vegetale che possono fornire tutti i nutrienti necessari per una dieta equilibrata.', 'https://www.example.com/dieta-vegetariana', '../img/dieta-vegetariana-432x243.jpg', '../img/bookmarkno.png', NULL, 2),
-(5, '2024-03-14', '3 diete efficaci che funzionano', 'Scopri tre diete efficaci che hanno dimostrato di funzionare per perdere peso in modo sano e sostenibile.', 'https://www.example.com/3-diete-efficaci', '../img/diete-efficaci-1-640x360.jpg', '../img/bookmarkno.png', NULL, 2),
-(6, '2024-03-13', 'Finestra anabolica: cos’è e cosa mangiare', 'Descrizione dell\'articolo sulla finestra anabolica', '#', '../img/LAK7418-600x336.jpg', '../img/bookmarkno.png', NULL, 0),
-(7, '2024-03-11', 'Colazione proteica: cosa mangiare ed esempi', 'Descrizione dell\'articolo sulla colazione proteica', '#', '../img/colazione-proteica-2-640x360.jpg', '../img/bookmarkno.png', NULL, 0),
-(8, '2024-03-10', 'Come perdere 5 kg in un mese?', 'Descrizione dell\'articolo su come perdere 5 kg', '#', '../img/evid_5kg-compressed-600x340.jpg', '../img/bookmarkno.png', NULL, 0),
-(9, '2024-03-13', 'Ectomorfo: caratteristiche, dieta ed allenamento', 'Descrizione dell\'articolo sull\'ectomorfo', '#', '../img/1ecto.jpg', '../img/bookmarkno.png', NULL, 0),
-(10, '2024-03-07', 'Reverse diet: come impostarla', 'Descrizione dell\'articolo sulla reverse diet', '#', '../img/2reverse.jpg', '../img/bookmarkno.png', NULL, 0),
-(11, '2024-03-06', 'Allenamento per dimagrire e perdere peso', 'Descrizione dell\'articolo sull\'allenamento per dimagrire', '#', '../img/3alldim.jpg', '../img/bookmarkno.png', NULL, 0),
-(12, '2024-03-05', 'Endomorfo: caratteristiche, dieta ed allenamento', 'Descrizione dell\'articolo sull\'endomorfo', '#', '../img/4end.jpg', '../img/bookmarkno.png', NULL, 0),
-(13, '2024-03-04', 'Colazione per dimagrire: cosa mangiare ed esempi', 'Descrizione dell\'articolo sulla colazione per dimagrire', '#', '../img/5colaz.jpg', '../img/bookmarkno.png', NULL, 0),
-(14, '2024-03-03', 'Colazione proteica dolce: cosa mangiare', 'Descrizione dell\'articolo sulla colazione proteica dolce', '#', '../img/6coldol.jpg', '../img/bookmarkno.png', NULL, 0);
+(1, '20 MARZO 2024', 'Reset metabolico per dimagrire: come si fa? Schema', 'Il reset metabolico è una strategia che permette di dimagrire alzando le calorie e di raggiungere una composizione corporea migliore, specialmente quando la dieta è abbinata ad un allenamento con…', 'https://www.example.com/reset-metabolico', '../img/largetab.png', '../img/bookmarkno.png', 'METABOLISMO', 1),
+(2, '19 MARZO 2024', 'Dieta della frutta per dimagrire', 'La dieta della frutta è una dieta che si basa principalmente sul consumo di frutta fresca e di stagione per favorire il dimagrimento e migliorare la salute.', 'https://www.example.com/dieta-della-frutta', '../img/frutta-verdura-480x270.jpeg', '../img/bookmarkno.png', NULL, 2),
+(3, '18 MARZO 2024', 'Dieta ferrea per dimagrire velocemente', 'La dieta ferrea è un regime alimentare molto rigido che promette una rapida perdita di peso attraverso il consumo di alimenti a basso contenuto calorico.', 'https://www.example.com/dieta-ferrea', '../img/dieta-ferrea-1-640x360.jpg', '../img/bookmarkno.png', NULL, 2),
+(4, '17 MARZO 2024', 'Dieta vegetariana: la guida completa', 'La dieta vegetariana esclude carne e pesce, ma include una vasta gamma di alimenti a base vegetale che possono fornire tutti i nutrienti necessari per una dieta equilibrata.', 'https://www.example.com/dieta-vegetariana', '../img/dieta-vegetariana-432x243.jpg', '../img/bookmarkno.png', NULL, 2),
+(5, '14 MARZO 2024', '3 diete efficaci che funzionano', 'Scopri tre diete efficaci che hanno dimostrato di funzionare per perdere peso in modo sano e sostenibile.', 'https://www.example.com/3-diete-efficaci', '../img/diete-efficaci-1-640x360.jpg', '../img/bookmarkno.png', NULL, 2),
+(6, '13 MARZO 2024', 'Finestra anabolica: cos’è e cosa mangiare', 'Descrizione dell\'articolo sulla finestra anabolica', '#', '../img/LAK7418-600x336.jpg', '../img/bookmarkno.png', NULL, 0),
+(7, '11 MARZO 2024', 'Colazione proteica: cosa mangiare ed esempi', 'Descrizione dell\'articolo sulla colazione proteica', '#', '../img/colazione-proteica-2-640x360.jpg', '../img/bookmarkno.png', NULL, 0),
+(8, '10 MARZO 2024', 'Come perdere 5 kg in un mese?', 'Descrizione dell\'articolo su come perdere 5 kg', '#', '../img/evid_5kg-compressed-600x340.jpg', '../img/bookmarkno.png', NULL, 0),
+(9, '13 MARZO 2024', 'Ectomorfo: caratteristiche, dieta ed allenamento', 'Descrizione dell\'articolo sull\'ectomorfo', '#', '../img/1ecto.jpg', '../img/bookmarkno.png', NULL, 0),
+(10, '7 MARZO 2024', 'Reverse diet: come impostarla', 'Descrizione dell\'articolo sulla reverse diet', '#', '../img/2reverse.jpg', '../img/bookmarkno.png', NULL, 0),
+(11, '6 MARZO 2024', 'Allenamento per dimagrire e perdere peso', 'Descrizione dell\'articolo sull\'allenamento per dimagrire', '#', '../img/3alldim.jpg', '../img/bookmarkno.png', NULL, 0),
+(12, '5 MARZO 2024', 'Endomorfo: caratteristiche, dieta ed allenamento', 'Descrizione dell\'articolo sull\'endomorfo', '#', '../img/4end.jpg', '../img/bookmarkno.png', NULL, 0),
+(13, '4 MARZO 2024', 'Colazione per dimagrire: cosa mangiare ed esempi', 'Descrizione dell\'articolo sulla colazione per dimagrire', '#', '../img/5colaz.jpg', '../img/bookmarkno.png', NULL, 0),
+(14, '3 MARZO 2024', 'Colazione proteica dolce: cosa mangiare', 'Descrizione dell\'articolo sulla colazione proteica dolce', '#', '../img/6coldol.jpg', '../img/bookmarkno.png', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -142,7 +142,7 @@ ALTER TABLE `articoli`
 -- AUTO_INCREMENT per la tabella `preferiti`
 --
 ALTER TABLE `preferiti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Limiti per le tabelle scaricate
