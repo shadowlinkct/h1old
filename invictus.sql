@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 30, 2024 alle 15:11
+-- Creato il: Mag 31, 2024 alle 08:15
 -- Versione del server: 10.4.28-MariaDB
--- Versione PHP: 8.0.28
+-- Versione PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -72,19 +72,19 @@ CREATE TABLE `articoli` (
 
 INSERT INTO `articoli` (`id`, `data`, `titolo`, `descrizione`, `link`, `immagine_principale`, `immagine_segnalibro`, `categoria`, `intestazione`) VALUES
 (1, '20 MARZO 2024', 'Reset metabolico per dimagrire: come si fa? Schema', 'Il reset metabolico è una strategia che permette di dimagrire alzando le calorie e di raggiungere una composizione corporea migliore, specialmente quando la dieta è abbinata ad un allenamento con…', 'https://www.example.com/reset-metabolico', '../img/largetab.png', '../img/bookmarkno.png', 'METABOLISMO', 1),
-(2, '19 MARZO 2024', 'Dieta della frutta per dimagrire', 'La dieta della frutta è una dieta che si basa principalmente sul consumo di frutta fresca e di stagione per favorire il dimagrimento e migliorare la salute.', 'https://www.example.com/dieta-della-frutta', '../img/frutta-verdura-480x270.jpeg', '../img/bookmarkno.png', NULL, 2),
-(3, '18 MARZO 2024', 'Dieta ferrea per dimagrire velocemente', 'La dieta ferrea è un regime alimentare molto rigido che promette una rapida perdita di peso attraverso il consumo di alimenti a basso contenuto calorico.', 'https://www.example.com/dieta-ferrea', '../img/dieta-ferrea-1-640x360.jpg', '../img/bookmarkno.png', NULL, 2),
-(4, '17 MARZO 2024', 'Dieta vegetariana: la guida completa', 'La dieta vegetariana esclude carne e pesce, ma include una vasta gamma di alimenti a base vegetale che possono fornire tutti i nutrienti necessari per una dieta equilibrata.', 'https://www.example.com/dieta-vegetariana', '../img/dieta-vegetariana-432x243.jpg', '../img/bookmarkno.png', NULL, 2),
-(5, '14 MARZO 2024', '3 diete efficaci che funzionano', 'Scopri tre diete efficaci che hanno dimostrato di funzionare per perdere peso in modo sano e sostenibile.', 'https://www.example.com/3-diete-efficaci', '../img/diete-efficaci-1-640x360.jpg', '../img/bookmarkno.png', NULL, 2),
-(6, '13 MARZO 2024', 'Finestra anabolica: cos’è e cosa mangiare', 'Descrizione dell\'articolo sulla finestra anabolica', '#', '../img/LAK7418-600x336.jpg', '../img/bookmarkno.png', NULL, 0),
-(7, '11 MARZO 2024', 'Colazione proteica: cosa mangiare ed esempi', 'Descrizione dell\'articolo sulla colazione proteica', '#', '../img/colazione-proteica-2-640x360.jpg', '../img/bookmarkno.png', NULL, 0),
-(8, '10 MARZO 2024', 'Come perdere 5 kg in un mese?', 'Descrizione dell\'articolo su come perdere 5 kg', '#', '../img/evid_5kg-compressed-600x340.jpg', '../img/bookmarkno.png', NULL, 0),
-(9, '13 MARZO 2024', 'Ectomorfo: caratteristiche, dieta ed allenamento', 'Descrizione dell\'articolo sull\'ectomorfo', '#', '../img/1ecto.jpg', '../img/bookmarkno.png', NULL, 0),
-(10, '7 MARZO 2024', 'Reverse diet: come impostarla', 'Descrizione dell\'articolo sulla reverse diet', '#', '../img/2reverse.jpg', '../img/bookmarkno.png', NULL, 0),
-(11, '6 MARZO 2024', 'Allenamento per dimagrire e perdere peso', 'Descrizione dell\'articolo sull\'allenamento per dimagrire', '#', '../img/3alldim.jpg', '../img/bookmarkno.png', NULL, 0),
-(12, '5 MARZO 2024', 'Endomorfo: caratteristiche, dieta ed allenamento', 'Descrizione dell\'articolo sull\'endomorfo', '#', '../img/4end.jpg', '../img/bookmarkno.png', NULL, 0),
-(13, '4 MARZO 2024', 'Colazione per dimagrire: cosa mangiare ed esempi', 'Descrizione dell\'articolo sulla colazione per dimagrire', '#', '../img/5colaz.jpg', '../img/bookmarkno.png', NULL, 0),
-(14, '3 MARZO 2024', 'Colazione proteica dolce: cosa mangiare', 'Descrizione dell\'articolo sulla colazione proteica dolce', '#', '../img/6coldol.jpg', '../img/bookmarkno.png', NULL, 0);
+(2, '19 MARZO 2024', 'Esercizi per le gambe', 'Esercizi per dimagrire le cosce e le gambe', 'https://www.example.com/dieta-della-frutta', '../img/invictusimg1.png', '../img/bookmarkno.png', NULL, 2),
+(3, '18 MARZO 2024', 'Allenamento per il petto', 'Allenamento panca piana nella home gym Lacertosus', 'https://www.example.com/dieta-ferrea', '../img/invictusimg2.png', '../img/bookmarkno.png', NULL, 2),
+(4, '17 MARZO 2024', 'Scheda per i bicipiti', 'come impostarla e programma', 'https://www.example.com/dieta-vegetariana', '../img/invictusimg3.png', '../img/bookmarkno.png', NULL, 2),
+(5, '14 MARZO 2024', '3 diete efficaci che funzionano', 'Scopri tre diete efficaci che hanno dimostrato di funzionare per perdere peso in modo sano e sostenibile.', 'https://www.example.com/3-diete-efficaci', '../img/invictusimg4.png', '../img/bookmarkno.png', NULL, 2),
+(6, '13 MARZO 2024', '', 'Indice Glicemico', '#', '../img/invictusimg9.jpg', '../img/bookmarkno.png', 'STRATEGIE PER DIMAGRIRE', 0),
+(7, '11 MARZO 2024', '', 'Descrizione dell\'articolo sulla colazione proteica', '#', '../img/colazione-proteica-2-640x360.jpg', '../img/bookmarkno.png', NULL, 0),
+(8, '10 MARZO 2024', '', 'Dieta chetogenica: pro e contro', '#', '../img/invictusimg8.jpg', '../img/bookmarkno.png', NULL, 0),
+(9, '13 MARZO 2024', '', 'Diete drastiche: cosa mangiare e rischi', '#', '../img/invictusimg6.jpg', '../img/bookmarkno.png', 'STRATEGIE PER DIMAGRIRE', 0),
+(10, '7 MARZO 2024', '', 'Dieta alcalina: cosa mangiare e come funziona', '#', '../img/invictusimg10.jpg', '../img/bookmarkno.png', NULL, 0),
+(11, '6 MARZO 2024', '', 'TUT (Timer Under Tension)', '#', '../img/invictusimg5.png', '../img/bookmarkno.png', 'STRATEGIE PER DIMAGRIRE', 0),
+(12, '5 MARZO 2024', '', 'Dieta FODMAP: come funziona?', '#', '../img/invictusimg7.jpg', '../img/bookmarkno.png', NULL, 0),
+(13, '4 MARZO 2024', '', 'Descrizione dell\'articolo sulla colazione per dimagrire', '#', '../img/5colaz.jpg', '../img/bookmarkno.png', NULL, 0),
+(14, '3 MARZO 2024', '', 'Spuntini proteici: i 10 migliori', '#', '../img/6coldol.jpg', '../img/bookmarkno.png', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -142,7 +142,7 @@ ALTER TABLE `articoli`
 -- AUTO_INCREMENT per la tabella `preferiti`
 --
 ALTER TABLE `preferiti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- Limiti per le tabelle scaricate
