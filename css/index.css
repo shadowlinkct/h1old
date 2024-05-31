@@ -257,12 +257,17 @@ div.academy-container span {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
   font-size: 0.8em; /* Riduzione della dimensione del font */
+  display: flex;
+  align-items: center;
 }
 
 .largetabitem {
   flex: 1 1 calc(50% - 10px); /* Prende il 50% della larghezza della viewport */
+  background-color: #f5f5f5;
 }
-
+.largetabitem img{
+    margin-top: 2vw;
+}
 .mediumtabitem {
   flex: 1 1 calc(25% - 10px); /* Prende il 25% della larghezza della viewport */
 }
@@ -278,10 +283,12 @@ div.academy-container span {
 .imagetab{
   display: flex;
   justify-content: center;
+
 }
 .imagetab img {
   width: 80%;
   height: auto;
+  object-fit: cover;
 }
 
 .tabtext {
