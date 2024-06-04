@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 31, 2024 alle 08:15
+-- Creato il: Giu 04, 2024 alle 18:41
 -- Versione del server: 10.4.28-MariaDB
 -- Versione PHP: 8.2.4
 
@@ -71,11 +71,11 @@ CREATE TABLE `articoli` (
 --
 
 INSERT INTO `articoli` (`id`, `data`, `titolo`, `descrizione`, `link`, `immagine_principale`, `immagine_segnalibro`, `categoria`, `intestazione`) VALUES
-(1, '20 MARZO 2024', 'Reset metabolico per dimagrire: come si fa? Schema', 'Il reset metabolico è una strategia che permette di dimagrire alzando le calorie e di raggiungere una composizione corporea migliore, specialmente quando la dieta è abbinata ad un allenamento con…', 'https://www.example.com/reset-metabolico', '../img/largetab.png', '../img/bookmarkno.png', 'METABOLISMO', 1),
-(2, '19 MARZO 2024', 'Esercizi per le gambe', 'Esercizi per dimagrire le cosce e le gambe', 'https://www.example.com/dieta-della-frutta', '../img/invictusimg1.png', '../img/bookmarkno.png', NULL, 2),
-(3, '18 MARZO 2024', 'Allenamento per il petto', 'Allenamento panca piana nella home gym Lacertosus', 'https://www.example.com/dieta-ferrea', '../img/invictusimg2.png', '../img/bookmarkno.png', NULL, 2),
-(4, '17 MARZO 2024', 'Scheda per i bicipiti', 'come impostarla e programma', 'https://www.example.com/dieta-vegetariana', '../img/invictusimg3.png', '../img/bookmarkno.png', NULL, 2),
-(5, '14 MARZO 2024', '3 diete efficaci che funzionano', 'Scopri tre diete efficaci che hanno dimostrato di funzionare per perdere peso in modo sano e sostenibile.', 'https://www.example.com/3-diete-efficaci', '../img/invictusimg4.png', '../img/bookmarkno.png', NULL, 2),
+(1, '20 MARZO 2024', 'Reset metabolico per dimagrire: come si fa? Schema', 'Il reset metabolico è una strategia che permette di dimagrire alzando le calorie e di raggiungere una composizione corporea migliore, specialmente quando la dieta è abbinata ad un allenamento con…', '#', '../img/largetab.png', '../img/bookmarkno.png', 'METABOLISMO', 1),
+(2, '19 MARZO 2024', 'Esercizi per le gambe', 'Esercizi per dimagrire le cosce e le gambe', '#', '../img/invictusimg1.png', '../img/bookmarkno.png', 'ALLENAMENTO AL FEMMINILE', 2),
+(3, '18 MARZO 2024', 'Allenamento per il petto', 'Allenamento panca piana nella home gym Lacertosus', '#', '../img/invictusimg2.png', '../img/bookmarkno.png', 'ESERCIZI PALESTRA', 2),
+(4, '17 MARZO 2024', 'Scheda per i bicipiti', 'come impostarla e programma', '#', '../img/invictusimg3.png', '../img/bookmarkno.png', 'SCHEDA PALESTRA', 2),
+(5, '14 MARZO 2024', '3 diete efficaci che funzionano', 'Scopri tre diete efficaci che hanno dimostrato di funzionare per perdere peso in modo sano e sostenibile.', '#', '../img/invictusimg4.png', '../img/bookmarkno.png', NULL, 2),
 (6, '13 MARZO 2024', '', 'Indice Glicemico', '#', '../img/invictusimg9.jpg', '../img/bookmarkno.png', 'STRATEGIE PER DIMAGRIRE', 0),
 (7, '11 MARZO 2024', '', 'Descrizione dell\'articolo sulla colazione proteica', '#', '../img/colazione-proteica-2-640x360.jpg', '../img/bookmarkno.png', NULL, 0),
 (8, '10 MARZO 2024', '', 'Dieta chetogenica: pro e contro', '#', '../img/invictusimg8.jpg', '../img/bookmarkno.png', NULL, 0),
@@ -85,6 +85,31 @@ INSERT INTO `articoli` (`id`, `data`, `titolo`, `descrizione`, `link`, `immagine
 (12, '5 MARZO 2024', '', 'Dieta FODMAP: come funziona?', '#', '../img/invictusimg7.jpg', '../img/bookmarkno.png', NULL, 0),
 (13, '4 MARZO 2024', '', 'Descrizione dell\'articolo sulla colazione per dimagrire', '#', '../img/5colaz.jpg', '../img/bookmarkno.png', NULL, 0),
 (14, '3 MARZO 2024', '', 'Spuntini proteici: i 10 migliori', '#', '../img/6coldol.jpg', '../img/bookmarkno.png', NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `esercizi`
+--
+
+CREATE TABLE `esercizi` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `immagine` varchar(255) NOT NULL,
+  `descrizione` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `esercizipreferiti`
+--
+
+CREATE TABLE `esercizipreferiti` (
+  `id` int(11) NOT NULL,
+  `id_utente` int(11) NOT NULL,
+  `id_esercizio` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -115,6 +140,20 @@ ALTER TABLE `articoli`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indici per le tabelle `esercizi`
+--
+ALTER TABLE `esercizi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indici per le tabelle `esercizipreferiti`
+--
+ALTER TABLE `esercizipreferiti`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `vin1` (`id_utente`),
+  ADD KEY `vin2` (`id_esercizio`);
+
+--
 -- Indici per le tabelle `preferiti`
 --
 ALTER TABLE `preferiti`
@@ -136,17 +175,36 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT per la tabella `articoli`
 --
 ALTER TABLE `articoli`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT per la tabella `esercizi`
+--
+ALTER TABLE `esercizi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT per la tabella `esercizipreferiti`
+--
+ALTER TABLE `esercizipreferiti`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `preferiti`
 --
 ALTER TABLE `preferiti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Limiti per le tabelle scaricate
 --
+
+--
+-- Limiti per la tabella `esercizipreferiti`
+--
+ALTER TABLE `esercizipreferiti`
+  ADD CONSTRAINT `vin1` FOREIGN KEY (`id_utente`) REFERENCES `account` (`id`),
+  ADD CONSTRAINT `vin2` FOREIGN KEY (`id_esercizio`) REFERENCES `esercizi` (`id`);
 
 --
 -- Limiti per la tabella `preferiti`
